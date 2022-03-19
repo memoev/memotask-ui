@@ -1,4 +1,5 @@
-import { FormControl, FormLabel, Switch } from '@chakra-ui/react'
+import { FormControl} from '@chakra-ui/react'
+import { Task } from 'components/Task/Task'
 
 interface Task {
   description: string,
@@ -6,20 +7,11 @@ interface Task {
 }
 
 interface TaskListProps {
-  tasks: Array<Task>,
+  tasks: Task[],
 }
 
-const TaskList = ({ tasks }: TaskListProps): JSX.Element => {
+export const TaskList: React.FC<TaskListProps> = ({tasks}) => {
   return <FormControl>
-    {tasks.map((el, index) => {
-      return (
-        <div key={index} style={{display:'flex'}}>
-          <FormLabel htmlFor={`${el.description}`}>{el.description}</FormLabel>
-          <Switch id={`${el.description}`} />
-        </div>
-      )
-    })}
+    {tasks.map((el, index) => <Task key={index} description={el.description} completed={el.completed}></Task>)}
   </FormControl>
 }
-
-export default TaskList;

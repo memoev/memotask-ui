@@ -18,7 +18,7 @@
   {
       "_id": "62185ed27d8459bcdcbd73c2",
       "description": "Third Task",
-      "completed": false,
+      "completed": true,
       "createdAt": "2022-02-25T04:45:06.255Z",
       "updatedAt": "2022-02-25T04:45:06.255Z",
       "__v": 0
